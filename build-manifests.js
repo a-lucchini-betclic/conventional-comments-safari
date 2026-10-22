@@ -56,8 +56,8 @@ async function buildChrome(buildMode) {
     const chromeManifest = {
         ...baseManifest,
         background: {
+            // No `type: 'module'`: unsupported by Safari, and background.js has no imports.
             service_worker: 'background.js',
-            type: 'module',
         },
     }
 
