@@ -5,6 +5,7 @@
   "scripts": {
     "build:chrome": "node build-manifests.js chrome",
     "build:firefox": "node build-manifests.js firefox",
+    "build:safari": "node build-manifests.js chrome",
     "build": "node build-manifests.js"
   },
   "dependencies": {

@@ -27,14 +27,14 @@ macOS, Xcode and Node.js.
 git clone https://github.com/a-lucchini-betclic/conventional-comments-safari.git
 cd conventional-comments-safari
 npm install
-npm run build:chrome
+npm run build:safari
 xcodebuild -project "safari/Conventional Comments.xcodeproj" -scheme "Conventional Comments" -configuration Debug -derivedDataPath build/xcode build
 open "build/xcode/Build/Products/Debug/Conventional Comments.app"
 ```
 
 Opening the app once registers the extension with Safari. You can quit the app afterwards; it does not need to keep running.
 
-Always run `npm run build:chrome` before building the Xcode project: Xcode bundles whatever is in `build/chrome`.
+Always run `npm run build:safari` before building the Xcode project. Safari uses the same files as the Chrome version, so this writes them to `build/chrome`, which is what Xcode bundles.
 
 ### Enable it in Safari
 
@@ -47,7 +47,7 @@ Always run `npm run build:chrome` before building the Xcode project: Xcode bundl
 
 - **Allow unsigned extensions is turned off every time Safari restarts.** After each restart, check it again in Settings > Developer. The extension comes back without rebuilding.
 - Don't delete `build/xcode`: Safari loads the extension from the app inside it. If it's gone, run the `xcodebuild` and `open` commands again.
-- To update: `git pull`, `npm run build:chrome`, then run the `xcodebuild` and `open` commands again.
+- To update: `git pull`, `npm run build:safari`, then run the `xcodebuild` and `open` commands again.
 
 ## 🎯 The Problem
 
